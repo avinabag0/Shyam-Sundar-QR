@@ -172,19 +172,151 @@
       padding: 0 10px;
     }
 
-    /* Social grid */
+    /* WhatsApp Featured Section */
+    .whatsapp-featured {
+      margin-bottom: 35px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .whatsapp-main {
+      position: relative;
+      width: 180px;
+      height: 180px;
+      border-radius: 30px;
+      overflow: visible;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+    }
+
+    .whatsapp-main::before {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 30px;
+      background: linear-gradient(135deg, #25D366, #128C7E, #25D366);
+      animation: borderGlow 3s linear infinite;
+      z-index: -1;
+      filter: blur(8px);
+      opacity: 0.7;
+    }
+
+    @keyframes borderGlow {
+      0%, 100% {
+        filter: blur(8px) brightness(1);
+      }
+      50% {
+        filter: blur(12px) brightness(1.3);
+      }
+    }
+
+    .whatsapp-link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      text-decoration: none;
+      color: white;
+      background: linear-gradient(135deg, rgba(37, 211, 102, 0.2), rgba(18, 140, 126, 0.25));
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(37, 211, 102, 0.4);
+      border-radius: 30px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .whatsapp-link::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.15), transparent 70%);
+      animation: shimmer 3s linear infinite;
+    }
+
+    @keyframes shimmer {
+      0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+      100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+      }
+    }
+
+    .whatsapp-main:hover {
+      transform: translateY(-10px) scale(1.08);
+    }
+
+    .whatsapp-link:hover {
+      background: linear-gradient(135deg, rgba(37, 211, 102, 0.3), rgba(18, 140, 126, 0.35));
+      border-color: rgba(37, 211, 102, 0.6);
+      box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
+    }
+
+    .whatsapp-icon {
+      font-size: 4.5rem;
+      margin-bottom: 12px;
+      color: #25D366;
+      filter: drop-shadow(0 4px 12px rgba(37, 211, 102, 0.5));
+      transition: transform 0.3s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    .whatsapp-main:hover .whatsapp-icon {
+      transform: scale(1.15) rotate(5deg);
+    }
+
+    .whatsapp-label {
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      opacity: 1;
+      text-transform: uppercase;
+      color: #25D366;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      position: relative;
+      z-index: 1;
+    }
+
+    .whatsapp-sublabel {
+      font-size: 0.85rem;
+      font-weight: 400;
+      opacity: 0.9;
+      margin-top: 5px;
+      color: rgba(255, 255, 255, 0.9);
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Social grid - Secondary icons */
     .social-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
       justify-content: center;
       margin: 0 auto;
+      max-width: 400px;
     }
 
     .social-item {
       position: relative;
       aspect-ratio: 1;
-      border-radius: 25px;
+      border-radius: 20px;
       overflow: hidden;
       transition: all 0.3s ease;
     }
@@ -201,7 +333,7 @@
       background: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(10px);
       border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 25px;
+      border-radius: 20px;
       transition: all 0.3s ease;
     }
 
@@ -212,8 +344,8 @@
     }
 
     .social-icon {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
+      font-size: 2rem;
+      margin-bottom: 8px;
       transition: transform 0.3s ease;
     }
 
@@ -222,7 +354,7 @@
     }
 
     .social-name {
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       font-weight: 600;
       letter-spacing: 0.5px;
       opacity: 0.9;
@@ -308,8 +440,25 @@
         height: 100px;
       }
 
+      .whatsapp-main {
+        width: 160px;
+        height: 160px;
+      }
+
+      .whatsapp-icon {
+        font-size: 4rem;
+      }
+
+      .whatsapp-label {
+        font-size: 1.1rem;
+      }
+
       .social-grid {
-        gap: 15px;
+        gap: 12px;
+      }
+
+      .social-icon {
+        font-size: 1.8rem;
       }
 
       .open-all-btn {
@@ -336,17 +485,35 @@
         font-size: 0.9rem;
       }
 
+      .whatsapp-main {
+        width: 140px;
+        height: 140px;
+      }
+
+      .whatsapp-icon {
+        font-size: 3.5rem;
+      }
+
+      .whatsapp-label {
+        font-size: 1rem;
+      }
+
+      .whatsapp-sublabel {
+        font-size: 0.75rem;
+      }
+
       .social-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        max-width: 100%;
       }
 
       .social-icon {
-        font-size: 2rem;
+        font-size: 1.6rem;
       }
 
       .social-name {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
       }
 
       .open-all-btn {
@@ -357,6 +524,21 @@
       .footer {
         font-size: 0.8rem;
         margin-top: 30px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .whatsapp-main {
+        width: 120px;
+        height: 120px;
+      }
+
+      .whatsapp-icon {
+        font-size: 3rem;
+      }
+
+      .social-icon {
+        font-size: 1.4rem;
       }
     }
   </style>
@@ -376,6 +558,18 @@
     <h1>SHYAM SUNDAR</h1>
     <p class="subtitle">Stay connected with SHYAM SUNDAR across platforms!</p>
 
+    <!-- WhatsApp Featured -->
+    <div class="whatsapp-featured">
+      <div class="whatsapp-main">
+        <a href="https://wa.me/917890552266" class="whatsapp-link" target="_blank">
+          <i class="fab fa-whatsapp whatsapp-icon"></i>
+          <div class="whatsapp-label">WhatsApp</div>
+          <div class="whatsapp-sublabel">Chat with us</div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Other Social Icons -->
     <div class="social-grid">
       <div class="social-item">
         <a href="https://www.instagram.com/shyamsundarsalkia" class="social-link instagram" target="_blank">
@@ -425,6 +619,7 @@
     // Open all links
     function openAllLinks() {
       const links = [
+        'https://wa.me/917890552266',
         'https://www.instagram.com/shyamsundarsalkia',
         'https://www.facebook.com/syamsundarsalkia',
         'https://www.youtube.com/@shyamsundarsalkiahowrah5493',
