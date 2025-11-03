@@ -27,13 +27,9 @@
       background-color: #a40014;
       color: white;
       min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       overflow-x: hidden;
       position: relative;
       text-align: center;
-      padding: 20px;
     }
 
     /* Background gradient animation */
@@ -98,10 +94,19 @@
       }
     }
 
-    /* Container */
-    .container {
+    /* Main sections */
+    section {
       position: relative;
       z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    /* Container */
+    .container {
       max-width: 500px;
       width: 100%;
       padding: 20px;
@@ -413,12 +418,268 @@
       box-shadow: 0 15px 40px rgba(255, 255, 255, 0.3);
     }
 
+    /* Scroll indicator */
+    .scroll-indicator {
+      margin-top: 50px;
+      animation: bounce 2s infinite;
+    }
+
+    .scroll-indicator i {
+      font-size: 2rem;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-10px);
+      }
+      60% {
+        transform: translateY(-5px);
+      }
+    }
+
     /* Footer */
     .footer {
       color: rgba(255, 255, 255, 0.5);
-      margin-top: 40px;
+      margin-top: 20px;
       font-size: 0.9rem;
       font-weight: 300;
+    }
+
+    /* ===============================
+       CATALOG SECTION
+    =============================== */
+    #catalog {
+      padding: 60px 20px;
+    }
+
+    .catalog-container {
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    .catalog-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #fff, #f5f5f5);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 15px;
+    }
+
+    .catalog-subtitle {
+      color: #ffeaea;
+      font-weight: 300;
+      font-size: 1.1rem;
+      margin-bottom: 50px;
+    }
+
+    /* Category Grid */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .category-card {
+      position: relative;
+      aspect-ratio: 3/4;
+      border-radius: 25px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .category-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.1));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .category-card:hover::before {
+      opacity: 1;
+    }
+
+    .category-card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .category-content {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      text-decoration: none;
+      color: white;
+    }
+
+    .category-icon {
+      font-size: 5rem;
+      margin-bottom: 20px;
+      filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+      transition: transform 0.3s ease;
+    }
+
+    .category-card:hover .category-icon {
+      transform: scale(1.1) rotate(-5deg);
+    }
+
+    .ladies-icon { color: #ff6b9d; }
+    .gents-icon { color: #4a9eff; }
+    .kids-icon { color: #ffd93d; }
+
+    .category-name {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .category-description {
+      font-size: 0.9rem;
+      opacity: 0.8;
+      text-align: center;
+    }
+
+    /* Modal Overlay */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.95);
+      z-index: 1000;
+      overflow-y: auto;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .modal-overlay.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Modal Content */
+    .modal-content {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 20px 40px;
+    }
+
+    .modal-close {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      z-index: 1001;
+    }
+
+    .modal-close:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: rotate(90deg);
+    }
+
+    .modal-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .modal-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    .modal-subtitle {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 1rem;
+    }
+
+    /* Image Gallery */
+    .image-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery-item {
+      position: relative;
+      aspect-ratio: 3/4;
+      border-radius: 15px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.05);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+      padding: 20px;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover .gallery-overlay {
+      transform: translateY(0);
+    }
+
+    .gallery-title {
+      color: white;
+      font-weight: 600;
+      font-size: 1rem;
     }
 
     /* --------------------
@@ -426,11 +687,11 @@
     --------------------- */
 
     @media (max-width: 768px) {
-      h1 {
+      h1, .catalog-title {
         font-size: 2rem;
       }
 
-      .subtitle {
+      .subtitle, .catalog-subtitle {
         font-size: 1rem;
         margin-bottom: 30px;
       }
@@ -465,9 +726,35 @@
         font-size: 1rem;
         padding: 14px 35px;
       }
+
+      .category-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .category-icon {
+        font-size: 4rem;
+      }
+
+      .category-name {
+        font-size: 1.5rem;
+      }
+
+      .image-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 15px;
+      }
+
+      .modal-title {
+        font-size: 2rem;
+      }
     }
 
     @media (max-width: 480px) {
+      section {
+        padding: 30px 15px;
+      }
+
       .container {
         padding: 10px;
       }
@@ -477,11 +764,11 @@
         height: 90px;
       }
 
-      h1 {
+      h1, .catalog-title {
         font-size: 1.7rem;
       }
 
-      .subtitle {
+      .subtitle, .catalog-subtitle {
         font-size: 0.9rem;
       }
 
@@ -525,6 +812,27 @@
         font-size: 0.8rem;
         margin-top: 30px;
       }
+
+      .category-grid {
+        gap: 15px;
+      }
+
+      .category-icon {
+        font-size: 3.5rem;
+      }
+
+      .category-name {
+        font-size: 1.3rem;
+      }
+
+      .image-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 10px;
+      }
+
+      .modal-content {
+        padding: 70px 15px 30px;
+      }
     }
 
     @media (max-width: 360px) {
@@ -548,56 +856,114 @@
   <div class="bg-gradient"></div>
   <div class="particles" id="particles"></div>
 
-  <div class="container">
-    <div class="logo-container">
-      <div class="logo">
-        <img src="Shyam Sundar.jpg" alt="Shyam Sundar Logo" />
+  <!-- Main Section -->
+  <section id="home">
+    <div class="container">
+      <div class="logo-container">
+        <div class="logo">
+          <img src="Shyam Sundar.jpg" alt="Shyam Sundar Logo" />
+        </div>
+      </div>
+
+      <h1>SHYAM SUNDAR</h1>
+      <p class="subtitle">Stay connected with SHYAM SUNDAR across platforms!</p>
+
+      <!-- WhatsApp Featured -->
+      <div class="whatsapp-featured">
+        <div class="whatsapp-main">
+          <a href="https://wa.me/917890552266" class="whatsapp-link" target="_blank">
+            <i class="fab fa-whatsapp whatsapp-icon"></i>
+            <div class="whatsapp-label">WhatsApp</div>
+            <div class="whatsapp-sublabel">Chat with us</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Other Social Icons -->
+      <div class="social-grid">
+        <div class="social-item">
+          <a href="https://www.instagram.com/shyamsundarsalkia" class="social-link instagram" target="_blank">
+            <i class="fab fa-instagram social-icon"></i>
+            <div class="social-name">Instagram</div>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a href="https://www.facebook.com/syamsundarsalkia" class="social-link facebook" target="_blank">
+            <i class="fab fa-facebook-f social-icon"></i>
+            <div class="social-name">Facebook</div>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a href="https://www.youtube.com/@shyamsundarsalkiahowrah5493" class="social-link youtube" target="_blank">
+            <i class="fab fa-youtube social-icon"></i>
+            <div class="social-name">YouTube</div>
+          </a>
+        </div>
+      </div>
+
+      <div class="cta-section">
+        <button class="open-all-btn" onclick="openAllLinks()">✨ Open All Platforms</button>
+      </div>
+
+      <div class="scroll-indicator">
+        <i class="fas fa-chevron-down"></i>
+      </div>
+
+      <div class="footer">Scan · Connect · Engage</div>
+    </div>
+  </section>
+
+  <!-- Catalog Section -->
+  <section id="catalog">
+    <div class="catalog-container">
+      <h2 class="catalog-title">Latest Collections</h2>
+      <p class="catalog-subtitle">Explore our trendy fashion collections</p>
+
+      <div class="category-grid">
+        <!-- Ladies -->
+        <div class="category-card" onclick="openCategory('ladies')">
+          <div class="category-content">
+            <i class="fas fa-female category-icon ladies-icon"></i>
+            <div class="category-name">Ladies</div>
+            <div class="category-description">Elegant & Trendy Wear</div>
+          </div>
+        </div>
+
+        <!-- Gents -->
+        <div class="category-card" onclick="openCategory('gents')">
+          <div class="category-content">
+            <i class="fas fa-male category-icon gents-icon"></i>
+            <div class="category-name">Gents</div>
+            <div class="category-description">Smart & Stylish Fashion</div>
+          </div>
+        </div>
+
+        <!-- Kids -->
+        <div class="category-card" onclick="openCategory('kids')">
+          <div class="category-content">
+            <i class="fas fa-child category-icon kids-icon"></i>
+            <div class="category-name">Kids</div>
+            <div class="category-description">Fun & Colorful Outfits</div>
+          </div>
+        </div>
       </div>
     </div>
+  </section>
 
-    <h1>SHYAM SUNDAR</h1>
-    <p class="subtitle">Stay connected with SHYAM SUNDAR across platforms!</p>
-
-    <!-- WhatsApp Featured -->
-    <div class="whatsapp-featured">
-      <div class="whatsapp-main">
-        <a href="https://wa.me/917890552266" class="whatsapp-link" target="_blank">
-          <i class="fab fa-whatsapp whatsapp-icon"></i>
-          <div class="whatsapp-label">WhatsApp</div>
-          <div class="whatsapp-sublabel">Chat with us</div>
-        </a>
-      </div>
+  <!-- Modal for Gallery -->
+  <div id="modal" class="modal-overlay">
+    <div class="modal-close" onclick="closeModal()">
+      <i class="fas fa-times"></i>
     </div>
-
-    <!-- Other Social Icons -->
-    <div class="social-grid">
-      <div class="social-item">
-        <a href="https://www.instagram.com/shyamsundarsalkia" class="social-link instagram" target="_blank">
-          <i class="fab fa-instagram social-icon"></i>
-          <div class="social-name">Instagram</div>
-        </a>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="modal-title">Collection</h2>
+        <p class="modal-subtitle">Latest trending styles</p>
       </div>
-
-      <div class="social-item">
-        <a href="https://www.facebook.com/syamsundarsalkia" class="social-link facebook" target="_blank">
-          <i class="fab fa-facebook-f social-icon"></i>
-          <div class="social-name">Facebook</div>
-        </a>
-      </div>
-
-      <div class="social-item">
-        <a href="https://www.youtube.com/@shyamsundarsalkiahowrah5493" class="social-link youtube" target="_blank">
-          <i class="fab fa-youtube social-icon"></i>
-          <div class="social-name">YouTube</div>
-        </a>
-      </div>
+      <div class="image-gallery" id="gallery"></div>
     </div>
-
-    <div class="cta-section">
-      <button class="open-all-btn" onclick="openAllLinks()">✨ Open All Platforms</button>
-    </div>
-
-    <div class="footer">Scan · Connect · Engage</div>
   </div>
 
   <script>
@@ -637,6 +1003,173 @@
         '.bg-gradient'
       ).style.transform = `translate(${mouseX * 20}px, ${mouseY * 20}px)`;
     });
+
+    // Indian Ethnic Collection - Verified Working Images
+    const collections = {
+      ladies: [
+        { title: 'Red Silk Saree', img: 'https://images.pexels.com/photos/1587927/pexels-photo-1587927.jpeg?auto=compress&cs=tinysrgb&w=600' },
+        { title: 'Designer Lehenga', img: 'https://images.pexels.com/photos/3266700/pexels-photo-3266700.jpeg?auto=compress&cs=tinysrgb&w=600' },
+        { title: 'Anarkali Suit', img: 'https://images.pexels.com/photos/1035682/pexels-photo-1035682.jpeg?auto=compress&cs=tinysrgb&w=600' },
+        { title: 'Traditional Saree', img: 'https://images.pexels.com/photos/3738088/pexels-photo-3738088.jpeg?auto=compress&cs=tinysrgb&w=600' },
+        { title: 'Embroidered Kurti', img: 'https://images.pexels.com/photos/1926620/pexels-photo-1926620.jpeg?auto=compress&cs=tinysrgb&w=600' },
+        { title: 'Party Wear Gown', img: 'https://images.pexels.com/photos/1926769/pexels-photo-1926769.jpeg?auto=compress&cs=tinysrgb&w=600' },
+        { title: 'Bridal Collection', img: 'https://images.pexels.com/photos/2127459/pexels-photo-2127459.jpeg?auto=compress&cs=tinysrgb&w=600' },
+        { title: 'Salwar Kameez', img: 'https://images.pexels.com/photos/3394310/pexels-photo-3394310.jpeg?auto=compress&cs=tinysrgb&w=600' },
+        { title: 'Festive Wear', img: 'https://images.pexels.com/photos/1755385/pexels-photo-1755385.jpeg?auto=compress&cs=tinysrgb&w=600' }
+      ],
+      gents: [
+        { title: 'Kurta Pajama', img: 'https://images.pexels.com/photos/2897883/pexels-photo-2897883.jpeg?auto=compress&cs=tinysrgb&w=600' },
+        { title: 'Sherwani', img: 'https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg?auto=compress&cs=tinysrgb&w=600' },
+        { title: 'Formal Shirt', img: 'https://images.pexels.com/photos/1055691/pexels-photo-1055691.jpeg?auto=compress&cs=tinysrgb&w=600' },
+        { title: 'Nehru Jacket', img: 'https://images.pexels.com/photos/1587976/pexels-photo-1587976.jpeg?auto=compress&cs=tinysrgb&w=600' },
+        { title: 'Pathani Suit', img: 'https://images.pexels.com/photos/2897881/pexels-photo-2897881.jpeg?auto=compress&cs=tinysrgb&w=600' },
+        { title: 'Indo-Western', img: 'https://images.pexels.com/photos/1926769/pexels-photo-1926769.jpeg?auto=compress&cs=tinysrgb&w=600' },
+        { title: 'Bandhgala', img: 'https://images.pexels.com/photos/1043473/pexels-photo-1043473.jpeg?auto=compress&cs=tinysrgb&w=600' },
+        { title: 'Casual Wear', img: 'https://images.pexels.com/photos/1097456/pexels-photo-1097456.jpeg?auto=compress&cs=tinysrgb&w=600' },
+        { title: 'Party Collection', img: 'https://images.pexels.com/photos/1587976/pexels-photo-1587976.jpeg?auto=compress&cs=tinysrgb&w=600' }
+      ],
+      kids: [
+        { title: 'Girls Lehenga', img: 'https://images.pexels.com/photos/1416736/pexels-photo-1416736.jpeg?auto=compress&cs=tinysrgb&w=600' },
+        { title: 'Boys Kurta', img: 'https://images.pexels.com/photos/1620653/pexels-photo-1620653.jpeg?auto=compress&cs=tinysrgb&w=600' },
+        { title: 'Party Dresses', img: 'https://images.pexels.com/photos/1416736/pexels-photo-1416736.jpeg?auto=compress&cs=tinysrgb&w=600' },
+        { title: 'Ethnic Wear', img: 'https://images.pexels.com/photos/1148998/pexels-photo-1148998.jpeg?auto=compress&cs=tinysrgb&w=600' },
+        { title: 'Casual Collection', img: 'https://images.pexels.com/photos/1620653/pexels-photo-1620653.jpeg?auto=compress&cs=tinysrgb&w=600' },
+        { title: 'Festive Special', img: 'https://images.pexels.com/photos/1416736/pexels-photo-1416736.jpeg?auto=compress&cs=tinysrgb&w=600' },
+        { title: 'Traditional Set', img: 'https://images.pexels.com/photos/1148998/pexels-photo-1148998.jpeg?auto=compress&cs=tinysrgb&w=600' },
+        { title: 'Summer Wear', img: 'https://images.pexels.com/photos/1620653/pexels-photo-1620653.jpeg?auto=compress&cs=tinysrgb&w=600' },
+        { title: 'Designer Outfits', img: 'https://images.pexels.com/photos/1416736/pexels-photo-1416736.jpeg?auto=compress&cs=tinysrgb&w=600' }
+      ]
+    };
+
+    // Open category modal
+    function openCategory(category) {
+      const modal = document.getElementById('modal');
+      const modalTitle = document.getElementById('modal-title');
+      const gallery = document.getElementById('gallery');
+      
+      // Set title
+      modalTitle.textContent = category.charAt(0).toUpperCase() + category.slice(1) + ' Collection';
+      
+      // Clear previous content
+      gallery.innerHTML = '';
+      
+      // Add images
+      collections[category].forEach(item => {
+        const galleryItem = document.createElement('div');
+        galleryItem.className = 'gallery-item';
+        galleryItem.innerHTML = `
+          <img src="${item.img}" alt="${item.title}" loading="lazy">
+          <div class="gallery-overlay">
+            <div class="gallery-title">${item.title}</div>
+          </div>
+        `;
+        gallery.appendChild(galleryItem);
+      });
+      
+      // Show modal
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // Close modal
+    function closeModal() {
+      const modal = document.getElementById('modal');
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Close modal on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeModal();
+      }
+    });
+
+    // Close modal on background click
+    document.getElementById('modal').addEventListener('click', (e) => {
+      if (e.target.id === 'modal') {
+        closeModal();
+      }
+    });
   </script>
 </body>
 </html>
+  <style>
+    /* ===============================
+       GLOBAL STYLES
+    =============================== */
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #0f2027;  /* fallback for old browsers */
+      background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+      color: white;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .bg-gradient {
+      position: fixed;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1), transparent 70%);
+      z-index: 0;
+      transition: transform 0.2s ease;
+    }
+
+    .particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .particle {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      animation: floatUp linear infinite;
+    }
+
+    @keyframes floatUp {
+      from {
+        transform: translateY(100vh);
+        opacity: 1;
+      }
+      to {
+        transform: translateY(-10vh);
+        opacity: 0;
+      }
+    }
+
+    /* ===============================
+       MAIN SECTION
+    =============================== */
+    main {
+      position: relative;
+      z-index: 1;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.125rem;
+      line-height: 1.6;
+    }
+
