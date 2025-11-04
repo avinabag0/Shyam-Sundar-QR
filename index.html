@@ -1066,9 +1066,12 @@
         gallery.appendChild(galleryItem);
       });
       
-      // Show modal
+      // Show modal and update browser history
       modal.classList.add('active');
       document.body.style.overflow = 'hidden';
+      
+      // Add state to browser history so back button works
+      history.pushState({ modalOpen: true, category: category }, '', `#${category}`);
     }
 
     // Close modal
@@ -1076,7 +1079,25 @@
       const modal = document.getElementById('modal');
       modal.classList.remove('active');
       document.body.style.overflow = 'auto';
+      
+      // If we pushed a state, go back in history
+      if (window.location.hash) {
+        history.back();
+      }
     }
+
+    // Handle browser back button
+    window.addEventListener('popstate', (event) => {
+      const modal = document.getElementById('modal');
+      if (event.state && event.state.modalOpen) {
+        // User clicked forward - reopen modal
+        openCategory(event.state.category);
+      } else {
+        // User clicked back - close modal
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+    });
 
     // Close modal on escape key
     document.addEventListener('keydown', (e) => {
