@@ -88,7 +88,7 @@
     .social-item { aspect-ratio: 1; border-radius: clamp(16px, 3vw, 22px); overflow: hidden; transition: all 0.4s ease; }
     .social-link { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; text-decoration: none; color: white; background: rgba(255,255,255,0.12); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.15); border-radius: inherit; transition: all 0.4s ease; }
     .social-link:hover { background: rgba(255,255,255,0.25); transform: translateY(-10px) scale(1.08); box-shadow: 0 12px 30px rgba(255,255,255,0.25); }
-    .social-icon { font DH-size: clamp(1.6rem, 4.5vw, 2.1rem); margin-bottom: 8px; transition: transform 0.4s ease; }
+    .social-icon { font-size: clamp(1.6rem, 4.5vw, 2.1rem); margin-bottom: 8px; transition: transform 0.4s ease; }
     .social-link:hover .social-icon { transform: scale(1.15); }
     .social-name { font-size: clamp(0.7rem, 2vw, 0.82rem); font-weight: 600; letter-spacing: 0.6px; opacity: 0.92; }
     .instagram:hover { color:#E4405F; } .facebook:hover { color:#1877F2; } .youtube:hover { color:#FF0000; }
@@ -220,7 +220,7 @@
       opacity: 0.85;
     }
 
-    /* Modal */
+    /* === MODAL — BROADER STORE TABS (RESPONSIVE) === */
     .modal-overlay { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.96); z-index:1000; overflow-y:auto; animation:fadeIn 0.4s ease; }
     .modal-overlay.active { display:block; }
     @keyframes fadeIn { from{opacity:0} to{opacity:1} }
@@ -228,14 +228,69 @@
     .modal-close { position:fixed; top:20px; right:20px; width: clamp(40px, 10vw, 50px); height: clamp(40px, 10vw, 50px); background:rgba(255,255,255,0.12); backdrop-filter:blur(12px); border:2px solid rgba(255,255,255,0.25); border-radius:50%; color:white; font-size: clamp(1.2rem, 3vw, 1.5rem); cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all 0.4s ease; z-index:1001; }
     .modal-close:hover { background:rgba(255,255,255,0.25); transform:rotate(90deg); }
     .modal-title { font-size: clamp(1.8rem, 5vw, 2.5rem); font-weight:700; color:white; margin-bottom:10px; }
-    .modal-subtitle { color:rgba(255,255,255,0.75); font-size: clamp(0.9rem, 2.5vw, 1 Becrem); margin-bottom:40px; }
-    .image-gallery { display:grid; grid-template-columns:repeat(auto-fill,minmax(clamp(220px, 45vw, 280px),1fr)); gap: clamp(16px, 3vw, 22px); }
-    .gallery-item { position:relative; aspect-ratio:3/4; border-radius: clamp(14px, 3vw, 18px); overflow:hidden; background:rgba(255,255,255,0.06); transition:transform 0.4s ease; cursor:pointer; }
-    .gallery-item:hover { transform:scale(1.06); }
+    .modal-subtitle { color:rgba(255,255,255,0.75); font-size: clamp(0.9rem, 2.5vw, 1rem); margin-bottom:40px; }
+
+    /* BROADER, RESPONSIVE GRID */
+    .image-gallery { 
+      display: grid; 
+      gap: 20px; 
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+    }
+
+    /* MOBILE: Full width, 1 column */
+    @media (max-width: 480px) {
+      .image-gallery { 
+        grid-template-columns: 1fr; 
+        gap: 16px; 
+      }
+      .gallery-item { 
+        min-height: 380px; 
+        border-radius: 18px; 
+      }
+    }
+
+    /* TABLET: 2 columns */
+    @media (min-width: 481px) and (max-width: 768px) {
+      .image-gallery { 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 18px; 
+      }
+      .gallery-item { 
+        border-radius: 16px; 
+      }
+    }
+
+    /* DESKTOP: 3+ columns, broader cards */
+    @media (min-width: 769px) {
+      .image-gallery { 
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
+        gap: 24px; 
+      }
+      .gallery-item { 
+        border-radius: 18px; 
+      }
+    }
+
+    .gallery-item { 
+      position:relative; 
+      aspect-ratio:3/4; 
+      overflow:hidden; 
+      background:rgba(255,255,255,0.05); 
+      transition:transform 0.3s ease; 
+      cursor:pointer; 
+    }
+    .gallery-item:hover { transform:scale(1.05); }
     .gallery-item img { width:100%; height:100%; object-fit:cover; }
-    .gallery-overlay { position:absolute; bottom:0; left:0; right:0; background:linear-gradient(to top,rgba(0,0,0,0.85),transparent); padding: clamp(16px, 4vw, 22px); transform:translateY(100%); transition:transform 0.4s ease; }
+    .gallery-overlay { 
+      position:absolute; 
+      bottom:0; left:0; right:0; 
+      background:linear-gradient(to top,rgba(0,0,0,0.8),transparent); 
+      padding:20px; 
+      transform:translateY(100%); 
+      transition:transform 0.3s ease; 
+    }
     .gallery-item:hover .gallery-overlay { transform:translateY(0); }
-    .gallery-title { color:white; font-weight:600; font-size: clamp(0.9rem, 2.5vw, 1.02rem); }
+    .gallery-title { color:white; font-weight:600; font-size:1rem; }
 
     @media (max-width: 480px) {
       .logo { width: 90px; height: 90px; }
@@ -273,7 +328,6 @@
 
       <div class="cta-section"><button class="open-all-btn" onclick="openAllLinks()">Open All Platforms</button></div>
       
-      <!-- ONLY CHANGE: ARROW IS NOW CLICKABLE -->
       <div class="scroll-indicator" onclick="scrollToCatalog()" style="cursor: pointer;">
         <i class="fas fa-chevron-down"></i>
       </div>
@@ -417,7 +471,6 @@
       animate();
     }
 
-    // Smooth Drag
     carousel.addEventListener("mousedown", (e) => {
       isDragging = true;
       startX = e.clientX;
@@ -440,7 +493,6 @@
       updatePositions();
     });
 
-    // Touch Support
     carousel.addEventListener("touchstart", (e) => {
       isDragging = true;
       startX = e.touches[0].clientX;
@@ -465,7 +517,7 @@
 
     window.addEventListener("resize", updatePositions);
     updatePositions();
-    setInterval(updatePositions, 16); // 60fps
+    setInterval(updatePositions, 16);
 
     // Modal
     const collections = {
@@ -500,7 +552,6 @@
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
     document.getElementById('modal').addEventListener('click', e => { if (e.target.id === 'modal') closeModal(); });
 
-    // === ONLY THIS FUNCTION ADDED ===
     function scrollToCatalog() {
       document.getElementById('catalog').scrollIntoView({ behavior: 'smooth' });
     }
