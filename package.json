@@ -18,7 +18,7 @@
     "url": "https://github.com/avinabag0/Shyam-Sundar-QR/issues"
   },
   "homepage": "https://github.com/avinabag0/Shyam-Sundar-QR#readme",
-  "dependencies": {
+  "devDependencies": {
     "sharp": "^0.34.5"
   }
 }
