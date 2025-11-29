@@ -5,91 +5,607 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SHYAM SUNDAR | Connect With Us</title>
   <link rel="icon" type="image/jpeg" href="Shyam Sundar.jpg" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
   <style>
-    /* === ALL YOUR ORIGINAL BEAUTIFUL STYLES (unchanged) === */
-    * { margin:0; padding:0; box-sizing:border-box; }
-    html { scroll-behavior:smooth; }
-    body { font-family:'Poppins',sans-serif; background:linear-gradient(135deg,#E34234 0%,#d93428 50%,#E34234 100%); color:white; min-height:100vh; overflow-x:hidden; position:relative; text-align:center; }
-    .bg-gradient { position:fixed; top:0; left:0; width:100%; height:100%; background:radial-gradient(circle at 20% 50%,rgba(255,200,200,0.08),transparent 50%),radial-gradient(circle at 80% 80%,rgba(255,150,150,0.1),transparent 50%),radial-gradient(circle at 40% 20%,rgba(255,180,180,0.08),transparent 50%); animation:gradientShift 15s ease infinite; z-index:0; }
-    @keyframes gradientShift { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.8;transform:scale(1.05)} }
-    .particles { position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:0; }
-    .particle { position:absolute; width:3px; height:3px; background:rgba(255,255,255,0.25); border-radius:50%; animation:particleFloat 15s infinite; }
-    @keyframes particleFloat { 0%{transform:translateY(100vh) translateX(0);opacity:0} 10%{opacity:1} 90%{opacity:1} 100%{transform:translateY(-100vh) translateX(100px);opacity:0} }
-    section { position:relative; z-index:1; min-height:100vh; display:flex; justify-content:center; align-items:center; padding:40px 20px; }
-    .container { max-width:500px; width:100%; padding:20px; animation:fadeInUp 1s ease-out; }
-    @keyframes fadeInUp { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
-    .logo-container { margin-bottom:25px; display:flex; justify-content:center; }
-    .logo { width:120px; height:120px; border-radius:50%; overflow:hidden; background:white; display:flex; align-items:center; justify-content:center; box-shadow:0 0 25px rgba(255,255,255,0.4); animation:float 3s ease-in-out infinite; }
-    .logo img { width:100%; height:100%; object-fit:cover; }
-    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
-    h1 { font-size:2.5rem; font-weight:700; background:linear-gradient(135deg,#fff,#f5f5f5); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; margin-bottom:12px; }
-    .subtitle { color:#ffeaea; font-weight:300; font-size:1.1rem; margin-bottom:40px; padding:0 10px; }
-    .whatsapp-featured { margin-bottom:35px; display:flex; justify-content:center; }
-    .whatsapp-main { position:relative; width:180px; height:180px; border-radius:30px; overflow:visible; transition:all .4s cubic-bezier(.175,.885,.32,1.275); animation:pulse 2s ease-in-out infinite; }
-    @keyframes pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.05)} }
-    .whatsapp-main::before { content:''; position:absolute; inset:-3px; border-radius:30px; background:linear-gradient(135deg,#25D366,#128C7E,#25D366); animation:borderGlow 3s linear infinite; z-index:-1; filter:blur(8px); opacity:0.7; }
-    @keyframes borderGlow { 0%,100%{filter:blur(8px) brightness(1)} 50%{filter:blur(12px) brightness(1.3)} }
-    .whatsapp-link { display:flex; flex-direction:column; align-items:center; justify-content:center; width:100%; height:100%; text-decoration:none; color:white; background:linear-gradient(135deg,rgba(37,211,102,.2),rgba(18,140,126,.25)); backdrop-filter:blur(10px); border:2px solid rgba(37,211,102,.4); border-radius:30px; transition:all .3s ease; position:relative; overflow:hidden; }
-    .whatsapp-link::before { content:''; position:absolute; top:-50%; left:-50%; width:200%; height:200%; background:radial-gradient(circle,rgba(255,255,255,0.15),transparent 70%); animation:shimmer 3s linear infinite; }
-    @keyframes shimmer { 0%{transform:translate(-50%,-50%) rotate(0)} 100%{transform:translate(-50%,-50%) rotate(360deg)} }
-    .whatsapp-main:hover { transform:translateY(-10px) scale(1.08); }
-    .whatsapp-link:hover { background:linear-gradient(135deg,rgba(37,211,102,.3),rgba(18,140,126,.35)); border-color:rgba(37,211,102,.6); box-shadow:0 15px 40px rgba(37,211,102,.4); }
-    .whatsapp-icon { font-size:4.5rem; margin-bottom:12px; color:#25D366; filter:drop-shadow(0 4px 12px rgba(37,211,102,.5)); transition:transform .3s; }
-    .whatsapp-main:hover .whatsapp-icon { transform:scale(1.15) rotate(5deg); }
-    .whatsapp-label { font-size:1.2rem; font-weight:700; letter-spacing:1px; color:#25D366; text-shadow:0 2px 8px rgba(0,0,0,.3); }
-    .whatsapp-sublabel { font-size:.85rem; opacity:.9; margin-top:5px; color:rgba(255,255,255,.9); }
-    .social-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:15px; max-width:400px; margin:0 auto; }
-    .social-item { position:relative; aspect-ratio:1; border-radius:20px; overflow:hidden; transition:all .3s; }
-    .social-link { display:flex; flex-direction:column; align-items:center; justify-content:center; width:100%; height:100%; text-decoration:none; color:white; background:rgba(255,255,255,.1); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,.1); border-radius:20px; transition:all .3s; }
-    .social-link:hover { background:rgba(255,255,255,.2); transform:translateY(-8px) scale(1.05); box-shadow:0 10px 25px rgba(255,255,255,.2); }
-    .social-icon { font-size:2rem; margin-bottom:8px; }
-    .instagram:hover { color:#E4405F; } .facebook:hover { color:#1877F2; } .youtube:hover { color:#FF0000; }
-    .cta-section { margin-top:40px; }
-    .open-all-btn { padding:16px 40px; background:linear-gradient(135deg,#ff5e5e,#a40014); color:white; border:none; border-radius:50px; font-size:1.1rem; font-weight:600; cursor:pointer; box-shadow:0 10px 30px rgba(0,0,0,.3); transition:all .3s; position:relative; overflow:hidden; }
-    .open-all-btn::before { content:''; position:absolute; top:0; left:-100%; width:100%; height:100%; background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent); transition:left .6s; }
-    .open-all-btn:hover::before { left:100%; } .open-all-btn:hover { transform:translateY(-3px); box-shadow:0 15px 40px rgba(255,255,255,255,.3); }
-    .scroll-indicator { margin-top:50px; animation:bounce 2s infinite; }
-    .scroll-indicator i { font-size:2rem; color:rgba(255,255,255,.6); }
-    @keyframes bounce { 0%,20%,50%,80%,100%{transform:translateY(0)} 40%{transform:translateY(-10px)} 60%{transform:translateY(-5px)} }
-    .footer { color:rgba(255,255,255,.5); margin-top:20px; font-size:.9rem; font-weight:300; }
-    #catalog { padding:60px 20px; }
-    .catalog-title { font-size:2.5rem; font-weight:700; background:linear-gradient(135deg,#fff,#f5f5f5); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; margin-bottom:15px; }
-    .catalog-subtitle { color:#ffeaea; font-weight:300; font-size:1.1rem; margin-bottom:50px; }
-    .category-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px; max-width:900px; margin:0 auto; }
-    .category-card { position:relative; aspect-ratio:3/4; border-radius:25px; overflow:hidden; cursor:pointer; transition:all .4s cubic-bezier(.175,.885,.32,1.275); background:rgba(255,255,255,.05); backdrop-filter:blur(10px); border:2px solid rgba(255,255,255,.1); }
-    .category-card:hover { transform:translateY(-10px) scale(1.03); box-shadow:0 20px 50px rgba(0,0,0,.4); }
-    .category-image { position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:-1; }
-    .category-content { position:relative; width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:30px; background:linear-gradient(to bottom,transparent,rgba(0,0,0,.7)); }
-    .category-name { font-size:1.8rem; font-weight:700; letter-spacing:1px; text-transform:uppercase; margin-bottom:10px; text-shadow:0 2px 8px rgba(0,0,0,.5); }
-    .modal-overlay { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,.95); z-index:1000; overflow-y:auto; }
-    .modal-overlay.active { display:block; }
-    .modal-close { position:fixed; top:20px; right:20px; width:50px; height:50px; background:rgba(255,255,255,.1); backdrop-filter:blur(10px); border:2px solid rgba(255,255,255,.2); border-radius:50%; color:white; font-size:1.5rem; cursor:pointer; display:flex; align-items:center; justify-content:center; z-index:2000; }
-    .modal-close:hover { background:rgba(255,255,255,.2); transform:rotate(90deg); }
-    .image-gallery { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:20px; }
-    .gallery-item { position:relative; aspect-ratio:3/4; border-radius:15px; overflow:hidden; background:rgba(255,255,255,.05); transition:transform .3s; cursor:pointer; }
-    .gallery-item:hover { transform:scale(1.05); }
-    .gallery-item img { width:100%; height:100%; object-fit:cover; }
-    .gallery-overlay { position:absolute; bottom:0; left:0; right:0; background:linear-gradient(to top,rgba(0,0,0,.8),transparent); padding:20px; transform:translateY(100%); transition:transform .3s; }
-    .gallery-item:hover .gallery-overlay { transform:translateY(0); }
-    .gallery-title { color:white; font-weight:600; }
-    @media (max-width:768px){ .category-grid{grid-template-columns:1fr} }
+    /* Reset and base setup */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #E34234 0%, #d93428 50%, #E34234 100%);
+      color: white;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+      text-align: center;
+    }
+    /* Background gradient animation */
+    .bg-gradient {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 20% 50%, rgba(255, 200, 200, 0.08), transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 150, 150, 0.1), transparent 50%),
+        radial-gradient(circle at 40% 20%, rgba(255, 180, 180, 0.08), transparent 50%);
+      animation: gradientShift 15s ease infinite;
+      z-index: 0;
+    }
+    @keyframes gradientShift {
+      0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0.8;
+        transform: scale(1.05);
+      }
+    }
+    /* Floating particles */
+    .particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .particle {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background: rgba(255, 255, 255, 0.25);
+      border-radius: 50%;
+      animation: particleFloat 15s infinite;
+    }
+    @keyframes particleFloat {
+      0% {
+        transform: translateY(100vh) translateX(0);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) translateX(100px);
+        opacity: 0;
+      }
+    }
+    /* Main sections */
+    section {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+    /* Container */
+    .container {
+      max-width: 500px;
+      width: 100%;
+      padding: 20px;
+      animation: fadeInUp 1s ease-out;
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    /* Logo section */
+    .logo-container {
+      margin-bottom: 25px;
+      display: flex;
+      justify-content: center;
+    }
+    .logo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
+      animation: float 3s ease-in-out infinite;
+    }
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #fff, #f5f5f5);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 12px;
+    }
+    .subtitle {
+      color: #ffeaea;
+      font-weight: 300;
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+      padding: 0 10px;
+    }
+    /* WhatsApp Featured Section */
+    .whatsapp-featured {
+      margin-bottom: 35px;
+      display: flex;
+      justify-content: center;
+    }
+    .whatsapp-main {
+      position: relative;
+      width: 180px;
+      height: 180px;
+      border-radius: 30px;
+      overflow: visible;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+    }
+    .whatsapp-main::before {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 30px;
+      background: linear-gradient(135deg, #25D366, #128C7E, #25D366);
+      animation: borderGlow 3s linear infinite;
+      z-index: -1;
+      filter: blur(8px);
+      opacity: 0.7;
+    }
+    @keyframes borderGlow {
+      0%, 100% {
+        filter: blur(8px) brightness(1);
+      }
+      50% {
+        filter: blur(12px) brightness(1.3);
+      }
+    }
+    .whatsapp-link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      text-decoration: none;
+      color: white;
+      background: linear-gradient(135deg, rgba(37, 211, 102, 0.2), rgba(18, 140, 126, 0.25));
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(37, 211, 102, 0.4);
+      border-radius: 30px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .whatsapp-link::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.15), transparent 70%);
+      animation: shimmer 3s linear infinite;
+    }
+    @keyframes shimmer {
+      0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+      100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+      }
+    }
+    .whatsapp-main:hover {
+      transform: translateY(-10px) scale(1.08);
+    }
+    .whatsapp-link:hover {
+      background: linear-gradient(135deg, rgba(37, 211, 102, 0.3), rgba(18, 140, 126, 0.35));
+      border-color: rgba(37, 211, 102, 0.6);
+      box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
+    }
+    .whatsapp-icon {
+      font-size: 4.5rem;
+      margin-bottom: 12px;
+      color: #25D366;
+      filter: drop-shadow(0 4px 12px rgba(37, 211, 102, 0.5));
+      transition: transform 0.3s ease;
+      position: relative;
+      z-index: 1;
+    }
+    .whatsapp-main:hover .whatsapp-icon {
+      transform: scale(1.15) rotate(5deg);
+    }
+    .whatsapp-label {
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      opacity: 1;
+      text-transform: uppercase;
+      color: #25D366;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      position: relative;
+      z-index: 1;
+    }
+    .whatsapp-sublabel {
+      font-size: 0.85rem;
+      font-weight: 400;
+      opacity: 0.9;
+      margin-top: 5px;
+      color: rgba(255, 255, 255, 0.9);
+      position: relative;
+      z-index: 1;
+    }
+    /* Social grid - Secondary icons */
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      justify-content: center;
+      margin: 0 auto;
+      max-width: 400px;
+    }
+    .social-item {
+      position: relative;
+      aspect-ratio: 1;
+      border-radius: 20px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    .social-link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      text-decoration: none;
+      color: white;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      transition: all 0.3s ease;
+    }
+    .social-link:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-8px) scale(1.05);
+      box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
+    }
+    .social-icon {
+      font-size: 2rem;
+      margin-bottom: 8px;
+      transition: transform 0.3s ease;
+    }
+    .social-link:hover .social-icon {
+      transform: scale(1.1);
+    }
+    .social-name {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      opacity: 0.9;
+    }
+    /* Hover color accents */
+    .instagram:hover { color: #E4405F; }
+    .facebook:hover { color: #1877F2; }
+    .youtube:hover { color: #FF0000; }
+
+    /* CTA button */
+    .cta-section { margin-top: 40px; }
+    .open-all-btn {
+      padding: 16px 40px;
+      background: linear-gradient(135deg, #ff5e5e, #a40014);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+    .open-all-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.6s ease;
+    }
+    .open-all-btn:hover::before { left: 100%; }
+    .open-all-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(255, 255, 255, 0.3);
+    }
+
+    /* Scroll indicator */
+    .scroll-indicator { margin-top: 50px; animation: bounce 2s infinite; }
+    .scroll-indicator i { font-size: 2rem; color: rgba(255, 255, 255, 0.6); }
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-10px); }
+      60% { transform: translateY(-5px); }
+    }
+
+    /* Footer */
+    .footer {
+      color: rgba(255, 255, 255, 0.5);
+      margin-top: 20px;
+      font-size: 0.9rem;
+      font-weight: 300;
+    }
+
+    /* ===============================
+       CATALOG SECTION
+    =============================== */
+    #catalog { padding: 60px 20px; }
+    .catalog-container { max-width: 1200px; width: 100%; }
+    .catalog-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #fff, #f5f5f5);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 15px;
+    }
+    .catalog-subtitle {
+      color: #ffeaea;
+      font-weight: 300;
+      font-size: 1.1rem;
+      margin-bottom: 50px;
+    }
+
+    /* Category Grid - 4 Cards */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .category-card {
+      position: relative;
+      aspect-ratio: 3/4;
+      border-radius: 25px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 255, 255, 0.1);
+    }
+    .category-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.1));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .category-card:hover::before { opacity: 1; }
+    .category-card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    /* Store Image Background */
+    .category-image {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .category-content {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      text-decoration: none;
+      color: white;
+      background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.7));
+    }
+
+    .category-name {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    }
+    .category-description {
+      font-size: 0.9rem;
+      opacity: 0.9;
+      text-align: center;
+    }
+
+    /* Modal Overlay */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.95);
+      z-index: 1000;
+      overflow-y: auto;
+      animation: fadeIn 0.3s ease;
+    }
+    .modal-overlay.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    .modal-content {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 20px 40px;
+    }
+    /* Increased z-index and ensured fixed positioning works for mobile */
+    .modal-close {
+      position: fixed;
+      top: 20px; right: 20px;
+      width: 50px; height: 50px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      z-index: 2000; /* Higher z-index to ensure it is always clickable */
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+    .modal-close:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: rotate(90deg);
+    }
+    .modal-header { text-align: center; margin-bottom: 40px; }
+    .modal-title { font-size: 2.5rem; font-weight: 700; color: white; margin-bottom: 10px; }
+    .modal-subtitle { color: rgba(255, 255, 255, 0.7); font-size: 1rem; }
+
+    /* Image Gallery */
+    .image-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .gallery-item {
+      position: relative;
+      aspect-ratio: 3/4;
+      border-radius: 15px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.05);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .gallery-item:hover { transform: scale(1.05); }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+    .gallery-overlay {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+      padding: 20px;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+    .gallery-item:hover .gallery-overlay { transform: translateY(0); }
+    .gallery-title { color: white; font-weight: 600; font-size: 1rem; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      h1, .catalog-title { font-size: 2rem; }
+      .subtitle, .catalog-subtitle { font-size: 1rem; margin-bottom: 30px; }
+      .logo { width: 100px; height: 100px; }
+      .whatsapp-main { width: 160px; height: 160px; }
+      .whatsapp-icon { font-size: 4rem; }
+      .whatsapp-label { font-size: 1.1rem; }
+      .social-grid { gap: 12px; }
+      .social-icon { font-size: 1.8rem; }
+      .open-all-btn { font-size: 1rem; padding: 14px 35px; }
+      .category-grid { grid-template-columns: 1fr; gap: 20px; }
+      .category-name { font-size: 1.5rem; }
+      .image-gallery { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; }
+      .modal-title { font-size: 2rem; }
+    }
+    @media (max-width: 480px) {
+      section { padding: 30px 15px; }
+      .container { padding: 10px; }
+      .logo { width: 90px; height: 90px; }
+      h1, .catalog-title { font-size: 1.7rem; }
+      .subtitle, .catalog-subtitle { font-size: 0.9rem; }
+      .whatsapp-main { width: 140px; height: 140px; }
+      .whatsapp-icon { font-size: 3.5rem; }
+      .whatsapp-label { font-size: 1rem; }
+      .whatsapp-sublabel { font-size: 0.75rem; }
+      .social-grid { gap: 10px; max-width: 100%; }
+      .social-icon { font-size: 1.6rem; }
+      .social-name { font-size: 0.7rem; }
+      .open-all-btn { font-size: 0.9rem; padding: 12px 30px; }
+      .footer { font-size: 0.8rem; margin-top: 30px; }
+      .category-grid { gap: 15px; }
+      .category-name { font-size: 1.3rem; }
+      .image-gallery { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+      .modal-content { padding: 70px 15px 30px; }
+    }
+    @media (max-width: 360px) {
+      .whatsapp-main { width: 120px; height: 120px; }
+      .whatsapp-icon { font-size: 3rem; }
+      .social-icon { font-size: 1.4rem; }
+    }
   </style>
 </head>
 <body>
   <div class="bg-gradient"></div>
   <div class="particles" id="particles"></div>
 
+  <!-- Main Section -->
   <section id="home">
     <div class="container">
       <div class="logo-container">
         <div class="logo">
-          <img src="Shyam Sundar.jpg" alt="Shyam Sundar Logo" />   <!-- LOGO FIXED (JPG)
+          <img src="Shyam Sundar.jpg" alt="Shyam Sundar Logo" />
         </div>
       </div>
       <h1>SHYAM SUNDAR</h1>
       <p class="subtitle">Stay connected with SHYAM SUNDAR across platforms!</p>
 
+      <!-- WhatsApp Featured -->
       <div class="whatsapp-featured">
         <div class="whatsapp-main">
           <a href="https://wa.me/917890552266" class="whatsapp-link" target="_blank" rel="noopener noreferrer">
@@ -100,47 +616,85 @@
         </div>
       </div>
 
+      <!-- Social Icons -->
       <div class="social-grid">
-        <div class="social-item"><a href="https://www.instagram.com/shyamsundarsalkia" class="social-link instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram social-icon"></i><div class="social-name">Instagram</div></a></div>
-        <div class="social-item"><a href="https://www.facebook.com/syamsundarsalkia" class="social-link facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f social-icon"></i><div class="social-name">Facebook</div></a></div>
-        <div class="social-item"><a href="https://www.youtube.com/@shyamsundarsalkiahowrah5493" class="social-link youtube" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube social-icon"></i><div class="social-name">YouTube</div></a></div>
+        <div class="social-item">
+          <a href="https://www.instagram.com/shyamsundarsalkia" class="social-link instagram" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-instagram social-icon"></i>
+            <div class="social-name">Instagram</div>
+          </a>
+        </div>
+        <div class="social-item">
+          <a href="https://www.facebook.com/syamsundarsalkia" class="social-link facebook" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-facebook-f social-icon"></i>
+            <div class="social-name">Facebook</div>
+          </a>
+        </div>
+        <div class="social-item">
+          <a href="https://www.youtube.com/@shyamsundarsalkiahowrah5493" class="social-link youtube" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-youtube social-icon"></i>
+            <div class="social-name">YouTube</div>
+          </a>
+        </div>
       </div>
 
       <div class="cta-section">
         <button class="open-all-btn" onclick="openAllLinks()">Open All Platforms</button>
       </div>
-      <div class="scroll-indicator"><i class="fas fa-chevron-down"></i></div>
+      <div class="scroll-indicator">
+        <i class="fas fa-chevron-down"></i>
+      </div>
       <div class="footer">Scan · Connect · Engage</div>
     </div>
   </section>
 
+  <!-- Catalog Section: Saree, Bedding, Textile, Garments -->
   <section id="catalog">
     <div class="catalog-container">
       <h2 class="catalog-title">Our Stores</h2>
       <p class="catalog-subtitle">Visit our specialized outlets</p>
       <div class="category-grid">
+        <!-- Saree -->
         <div class="category-card" onclick="openCategory('saree')">
-          <img src="saree.webp" alt="Saree Store" class="category-image" />   PREVIEW FIXED
-          <div class="category-content"><div class="category-name">Saree</div><div class="category-description">Elegant Silk & Designer Sarees</div></div>
+          <img src="saree.webp" alt="Saree Store" class="category-image" />
+          <div class="category-content">
+            <div class="category-name">Saree</div>
+            <div class="category-description">Elegant Silk & Designer Sarees</div>
+          </div>
         </div>
+        <!-- Bedding -->
         <div class="category-card" onclick="openCategory('bedding')">
-          <img src="bedding.webp" alt="Bedding Store" class="category-image" />   PREVIEW FIXED
-          <div class="category-content"><div class="category-name">Bedding</div><div class="category-description">Premium Bedsheets & Linens</div></div>
+          <img src="bedding.webp" alt="Bedding Store" class="category-image" />
+          <div class="category-content">
+            <div class="category-name">Bedding</div>
+            <div class="category-description">Premium Bedsheets & Linens</div>
+          </div>
         </div>
+        <!-- Textile -->
         <div class="category-card" onclick="openCategory('textile')">
-          <img src="textile.webp" alt="Textile Store" class="category-image" />   PREVIEW FIXED
-          <div class="category-content"><div class="category-name">Textile</div><div class="category-description">Wholesale Fabrics & Materials</div></div>
+          <img src="textile.webp" alt="Textile Store" class="category-image" />
+          <div class="category-content">
+            <div class="category-name">Textile</div>
+            <div class="category-description">Wholesale Fabrics & Materials</div>
+          </div>
         </div>
+        <!-- Garments -->
         <div class="category-card" onclick="openCategory('garments')">
-          <img src="garments.webp" alt="Garments Store" class="category-image" />   PREVIEW FIXED
-          <div class="category-content"><div class="category-name">Garments</div><div class="category-description">Ready-Made Fashion</div></div>
+          <img src="garments.webp" alt="Garments Store" class="category-image" />
+          <div class="category-content">
+            <div class="category-name">Garments</div>
+            <div class="category-description">Ready-Made Fashion</div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Modal -->
   <div id="modal" class="modal-overlay">
-    <div class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></div>
+    <div class="modal-close" onclick="closeModal()">
+      <i class="fas fa-times"></i>
+    </div>
     <div class="modal-content">
       <div class="modal-header">
         <h2 class="modal-title" id="modal-title">Store View</h2>
@@ -151,17 +705,180 @@
   </div>
 
   <script>
-    // === YOUR ORIGINAL SCRIPT (unchanged, only paths use .webp inside folders) ===
-    function createParticles(){const c=document.getElementById('particles');for(let i=0;i<25;i++){let p=document.createElement('div');p.className='particle';p.style.left=Math.random()*100+'%';p.style.animationDelay=Math.random()*15+'s';p.style.animationDuration=(15+Math.random()*10)+'s';c.appendChild(p);}}createParticles();
-    function openAllLinks(){['https://wa.me/917890552266','https://www.instagram.com/shyamsundarsalkia','https://www.facebook.com/syamsundarsalkia','https://www.youtube.com/@shyamsundarsalkiahowrah5493'].forEach((l,i)=>setTimeout(()=>window.open(l,'_blank','noopener,noreferrer'),i*200));}
-    document.addEventListener('mousemove',e=>{let x=e.clientX/window.innerWidth*20,y=e.clientY/window.innerHeight*20;document.querySelector('.bg-gradient').style.transform=`translate(${x}px,${y}px)`;});
-    const collections={saree:Array.from({length:20},(_,i)=>({title:`Saree Display ${i+1}`,img:`saree/${i+1}.webp`})),textile:Array.from({length:20},(_,i)=>({title:`Textile Display ${i+1}`,img:`textile/${i+1}.webp`})),bedding:[{title:'Premium Bedsheets',img:'bedding.jpg'},{title:'Pillow & Comforter',img:'bedding.jpg'},{title:'Interior Setup',img:'bedding.jpg'}],garments:[{title:'Ready-Made Fashion',img:'garments.jpg'},{title:'Ethnic Wear',img:'garments.jpg'},{title:'Festive Collection',img:'garments.jpg'}]};
-    function openCategory(c){const m=document.getElementById('modal'),t=document.getElementById('modal-title'),g=document.getElementById('gallery');t.textContent=c.charAt(0).toUpperCase()+c.slice(1)+' Store';g.innerHTML='';collections[c].forEach(i=>{let d=document.createElement('div');d.className='gallery-item';d.innerHTML=`<img src="${i.img}" alt="${i.title}" loading="lazy"><div class="gallery-overlay"><div class="gallery-title">${i.title}</div></div>`;g.appendChild(d);});m.classList.add('active');document.body.style.overflow='hidden';history.pushState({modalOpen:true,category:c},'','#${c}');}
-    function closeModal(){document.getElementById('modal').classList.remove('active');document.body.style.overflow='auto';history.replaceState(null,null,window.location.pathname);}
-    window.addEventListener('popstate',e=>{if(e.state&&e.state.modalOpen)openCategory(e.state.category);else closeModal();});
-    document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
-    document.getElementById('modal').addEventListener('click',e=>{if(e.target.id==='modal')closeModal();});
-    document.querySelectorAll('a[href^="http"]').forEach(l=>{if(!l.href.startsWith('mailto:')&&!l.href.startsWith('tel:')){l.target='_blank';l.rel='noopener noreferrer';}});
+    // Particles
+    function createParticles() {
+      const particlesContainer = document.getElementById('particles');
+      const count = 25;
+      for (let i = 0; i < count; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 15 + 's';
+        particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+        particlesContainer.appendChild(particle);
+      }
+    }
+    createParticles();
+
+    // Open all links
+    function openAllLinks() {
+      const links = [
+        'https://wa.me/917890552266',
+        'https://www.instagram.com/shyamsundarsalkia',
+        'https://www.facebook.com/syamsundarsalkia',
+        'https://www.youtube.com/@shyamsundarsalkiahowrah5493',
+      ];
+      links.forEach((link, i) => {
+        setTimeout(() => window.open(link, '_blank', 'noopener,noreferrer'), i * 200);
+      });
+    }
+
+    // Mouse follow gradient
+    document.addEventListener('mousemove', (e) => {
+      const mouseX = e.clientX / window.innerWidth;
+      const mouseY = e.clientY / window.innerHeight;
+      document.querySelector('.bg-gradient').style.transform = `translate(${mouseX * 20}px, ${mouseY * 20}px)`;
+    });
+
+    // Store Collections
+    const collections = {
+      // UPDATED: Saree now pulls from the 'saree/' folder
+      // Images must be named 1.jpg, 2.jpg ... 20.jpg inside the saree folder
+      saree: [
+    { title: 'Saree Display 1', img: 'saree/1.webp' },
+    { title: 'Saree Display 2', img: 'saree/2.webp' },
+    { title: 'Saree Display 3', img: 'saree/3.webp' },
+    { title: 'Saree Display 4', img: 'saree/4.webp' },
+    { title: 'Saree Display 5', img: 'saree/5.webp' },
+    { title: 'Saree Display 6', img: 'saree/6.webp' },
+    { title: 'Saree Display 7', img: 'saree/7.webp' },
+    { title: 'Saree Display 8', img: 'saree/8.webp' },
+    { title: 'Saree Display 9', img: 'saree/9.webp' },
+    { title: 'Saree Display 10', img: 'saree/10.webp' },
+    { title: 'Saree Display 11', img: 'saree/11.webp' },
+    { title: 'Saree Display 12', img: 'saree/12.webp' },
+    { title: 'Saree Display 13', img: 'saree/13.webp' },
+    { title: 'Saree Display 14', img: 'saree/14.webp' },
+    { title: 'Saree Display 15', img: 'saree/15.webp' },
+    { title: 'Saree Display 16', img: 'saree/16.webp' },
+    { title: 'Saree Display 17', img: 'saree/17.webp' },
+    { title: 'Saree Display 18', img: 'saree/18.webp' },
+    { title: 'Saree Display 19', img: 'saree/19.webp' },
+    { title: 'Saree Display 20', img: 'saree/20.webp' },
+      ],
+      bedding: [
+        { title: 'Premium Bedsheets', img: 'bedding.jpg' },
+        { title: 'Pillow & Comforter', img: 'bedding.jpg' },
+        { title: 'Interior Setup', img: 'bedding.jpg' }
+      ],
+      textile: [
+    { title: 'Textile Display 1', img: 'textile/1.webp' },
+    { title: 'Textile Display 2', img: 'textile/2.webp' },
+    { title: 'Textile Display 3', img: 'textile/3.webp' },
+    { title: 'Textile Display 4', img: 'textile/4.webp' },
+    { title: 'Textile Display 5', img: 'textile/5.webp' },
+    { title: 'Textile Display 6', img: 'textile/6.webp' },
+    { title: 'Textile Display 7', img: 'textile/7.webp' },
+    { title: 'Textile Display 8', img: 'textile/8.webp' },
+    { title: 'Textile Display 9', img: 'textile/9.webp' },
+    { title: 'Textile Display 10', img: 'textile/10.webp' },
+    { title: 'Textile Display 11', img: 'textile/11.webp' },
+    { title: 'Textile Display 12', img: 'textile/12.webp' },
+    { title: 'Textile Display 13', img: 'textile/13.webp' },
+    { title: 'Textile Display 14', img: 'textile/14.webp' },
+    { title: 'Textile Display 15', img: 'textile/15.webp' },
+    { title: 'Textile Display 16', img: 'textile/16.webp' },
+    { title: 'Textile Display 17', img: 'textile/17.webp' },
+    { title: 'Textile Display 18', img: 'textile/18.webp' },
+    { title: 'Textile Display 19', img: 'textile/19.webp' },
+    { title: 'Textile Display 20', img: 'textile/20.webp' },
+      ],
+      garments: [
+        { title: 'Ready-Made Fashion', img: 'garments.jpg' },
+        { title: 'Ethnic Wear', img: 'garments.jpg' },
+        { title: 'Festive Collection', img: 'garments.jpg' }
+      ]
+    };
+
+    // Open Modal
+    function openCategory(category) {
+      const modal = document.getElementById('modal');
+      const modalTitle = document.getElementById('modal-title');
+      const gallery = document.getElementById('gallery');
+
+      modalTitle.textContent = category.charAt(0).toUpperCase() + category.slice(1) + ' Store';
+      gallery.innerHTML = '';
+
+      collections[category].forEach(item => {
+        const galleryItem = document.createElement('div');
+        galleryItem.className = 'gallery-item';
+        
+        // NOTE: If images are not showing, check their file extension (.jpg vs .jpeg)
+        // I removed the hidden onerror so you can see if the image path is broken
+        galleryItem.innerHTML = `
+          <img src="${item.img}" alt="${item.title}" loading="lazy">
+          <div class="gallery-overlay">
+            <div class="gallery-title">${item.title}</div>
+          </div>
+        `;
+        gallery.appendChild(galleryItem);
+      });
+
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      
+      // Push history state
+      try {
+        history.pushState({ modalOpen: true, category }, '', `#${category}`);
+      } catch (e) {
+        console.log('History API not supported in this environment');
+      }
+    }
+
+    // Close Modal - FIX: Use replaceState instead of back() for stability
+    function closeModal() {
+      const modal = document.getElementById('modal');
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+      
+      // Instead of history.back() which can cause loops or fail in some environments,
+      // we simply clean the URL. The browser Back button will still work via popstate.
+      try {
+        history.replaceState(null, null, window.location.pathname);
+      } catch (e) {
+        window.location.hash = '';
+      }
+    }
+
+    // Browser Back Button Support
+    window.addEventListener('popstate', (e) => {
+      const modal = document.getElementById('modal');
+      // If we have state, it means we went "back" to a state where modal should be OPEN
+      // or "forward" to a state where it is open
+      if (e.state && e.state.modalOpen) {
+        openCategory(e.state.category);
+      } else {
+        // If no state, it means we went "back" to the root, so close the modal
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+    });
+
+    // Close on Esc
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+    
+    // Close on Overlay Click
+    document.getElementById('modal').addEventListener('click', (e) => {
+      if (e.target.id === 'modal') closeModal();
+    });
+
+    // Force external links
+    document.querySelectorAll('a[href^="http"]').forEach(link => {
+      if (!link.href.startsWith('mailto:') && !link.href.startsWith('tel:')) {
+        link.setAttribute('target', '_blank');
+        link.setAttribute('rel', 'noopener noreferrer');
+      }
+    });
   </script>
 </body>
 </html>
